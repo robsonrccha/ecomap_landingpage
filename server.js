@@ -40,7 +40,9 @@ app.post("/subscribe", async (req, res) => {
   }
 });
 
-// Servidor rodando na porta 5000
-app.listen(5000, () => {
-  console.log("🚀 Servidor rodando na porta 5000");
+// Se o Vercel fornecer o PORT, usamos ele, senão usamos a porta 5000.
+const port = process.env.PORT || 5000;  
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
 });
+
