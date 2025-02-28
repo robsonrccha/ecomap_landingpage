@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "ecomap-landing-page",
   "version": "1.0.0",
@@ -6,4 +7,14 @@
   "scripts": {
     "start": "echo 'Não é necessário iniciar um servidor para este projeto.'"
   }
+=======
+{
+  "name": "ecomap-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page para coleta de e-mails do EcoMap",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Não é necessário iniciar um servidor para este projeto.'"
+  }
+>>>>>>> ff7654b7000b26405f81392b3352d262d4de92d4
 }
