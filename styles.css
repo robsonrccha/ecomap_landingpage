@@ -1,0 +1,105 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('photos/ecomap_photo.avif'); /* Imagem local */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com menos transparência */
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar a caixa */
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50; /* Verde */
+    margin-bottom: 0.5rem;
+  }
+  
+  header .subtitle {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  
+  .description h2 {
+    font-size: 1.8rem;
+    color: #4CAF50; /* Verde */
+    margin-bottom: 1rem;
+  }
+  
+  .description p {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .form-section h2 {
+    font-size: 1.5rem;
+    color: #4CAF50; /* Verde */
+    margin-bottom: 1rem;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  input[type="email"] {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #4CAF50; /* Verde */
+    border-radius: 5px;
+    width: 70%;
+    margin-right: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo do input mais claro */
+    color: #333;
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #4CAF50; /* Verde */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Verde mais escuro */
+  }
+  
+  .message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #ff4444; /* Vermelho para mensagens de erro */
+  }
+  
+  footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #fff;
+  }
