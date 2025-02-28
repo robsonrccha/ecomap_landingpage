@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "ecomap-landing-page",
   "version": "1.0.0",
@@ -6,15 +5,10 @@
   "main": "index.html",
   "scripts": {
     "start": "echo 'Não é necessário iniciar um servidor para este projeto.'"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.7"
   }
-=======
-{
-  "name": "ecomap-landing-page",
-  "version": "1.0.0",
-  "description": "Landing page para coleta de e-mails do EcoMap",
-  "main": "index.html",
-  "scripts": {
-    "start": "echo 'Não é necessário iniciar um servidor para este projeto.'"
-  }
->>>>>>> ff7654b7000b26405f81392b3352d262d4de92d4
 }
