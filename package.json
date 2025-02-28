@@ -1,0 +1,9 @@
+{
+  "name": "ecomap-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page para coleta de e-mails do EcoMap",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Não é necessário iniciar um servidor para este projeto.'"
+  }
+}

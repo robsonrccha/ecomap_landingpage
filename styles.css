@@ -1,0 +1,133 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; /* Necessário para posicionar o pseudo-elemento */
+  overflow: hidden; /* Evita barras de rolagem */
+}
+
+/* Pseudo-elemento para a imagem de fundo desfocada */
+body::before {
+  content: '';
+  background-image: url('photos/ecomap_photo.avif'); /* Imagem local */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px); /* Aplica o desfoque */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo */
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar a caixa */
+  position: relative; /* Garante que o conteúdo fique acima do fundo desfocado */
+  z-index: 1; /* Coloca o container acima do pseudo-elemento */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #4CAF50; /* Verde */
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.description h2 {
+  font-size: 1.8rem;
+  color: #4CAF50; /* Verde */
+  margin-bottom: 1rem;
+}
+
+.description p {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  color: #4CAF50; /* Verde */
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form p {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #4CAF50; /* Verde */
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo do input mais claro */
+  color: #333;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #4CAF50; /* Verde */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049; /* Verde mais escuro */
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ff4444; /* Vermelho para mensagens de erro */
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #fff;
+}
