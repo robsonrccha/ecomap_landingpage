@@ -24,7 +24,7 @@
 
       <section class="form-section">
         <h2>Inscreva-se para receber atualizações</h2>
-        <form id="emailForm" name="contato" netlify action="/obrigado.html">
+        <form id="emailForm">
           <p>
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
@@ -45,4 +45,29 @@
       <p>&copy; 2023 EcoMap. Todos os direitos reservados.</p>
     </footer>
   </div>
+
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      const response = await fetch("http://localhost:5000/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email })
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        window.location.href = "/obrigado.html";
+      } else {
+        document.getElementById("message").textContent = result.error || "Erro ao cadastrar.";
+      }
+    });
+  </script>
+
 </body>
+</html>
