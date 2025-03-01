@@ -49,25 +49,21 @@
   <script>
     document.getElementById("emailForm").addEventListener("submit", async function (event) {
       event.preventDefault();
-
+  
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
-
-      const response = await fetch("http://localhost:5000/subscribe", {
+  
+      const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email })
       });
-
+  
       const result = await response.json();
-
-      if (response.ok) {
-        window.location.href = "/obrigado.html";
-      } else {
-        document.getElementById("message").textContent = result.error || "Erro ao cadastrar.";
-      }
+      document.getElementById("message").textContent = result.message || result.error;
     });
   </script>
+  
 
 </body>
 </html>
