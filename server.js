@@ -2,22 +2,32 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Conectar ao MongoDB Atlas
-mongoose.connect("mongodb+srv://rrocha:P1hXmR84JwrZRIUK@cluster0.hbxfupw.mongodb.net/ecomapDB", {
+// Configuração do rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // Limite de 100 requisições por IP
+});
+app.use(limiter);
+
+// Conectar ao MongoDB Atlas (usando variável de ambiente)
+const mongoURI = process.env.MONGO_URI || "mongodb+srv://rrocha:P1hXmR84JwrZRIUK@cluster0.hbxfupw.mongodb.net/ecomapDB";
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 })
 .then(() => console.log("🔥 Conectado ao MongoDB Atlas"))
 .catch(err => console.error("❌ Erro ao conectar ao MongoDB:", err));
 
+// Modelo de Usuário
 const UserSchema = new mongoose.Schema({
-  name: String,
-  email: String
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
 });
 
 const User = mongoose.model("User", UserSchema);
@@ -29,6 +39,11 @@ app.post("/subscribe", async (req, res) => {
 
     if (!name || !email) {
       return res.status(400).json({ error: "Nome e e-mail são obrigatórios." });
+    }
+
+    // Validação simples de e-mail
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return res.status(400).json({ error: "E-mail inválido." });
     }
 
     const newUser = new User({ name, email });
