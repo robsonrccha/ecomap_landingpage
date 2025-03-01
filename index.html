@@ -53,7 +53,7 @@
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
   
-      const response = await fetch("/api/subscribe", {
+      const response = await fetch("/.netlify/functions/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email })
