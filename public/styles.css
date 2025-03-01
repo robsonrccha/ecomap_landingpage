@@ -19,7 +19,7 @@ body {
 /* Pseudo-elemento para a imagem de fundo desfocada */
 body::before {
   content: '';
-  background-image: url('photos/ecomap_photo.avif'); /* Imagem local */
+  background-image: url('./photos/ecomap_photo.avif'); /* Imagem local */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
